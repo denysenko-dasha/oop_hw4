@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Shop.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+
+                <Button
+                    x:Name="AddButton"
+                    Text="Add" 
+                    Clicked="OnAddClicked"
+                    HorizontalOptions="Fill" />
+                <Button
+                    x:Name="DeleteButton"
+                    Text="Delete" 
+                    Clicked="OnDeleteClicked"
+                    HorizontalOptions="Fill" />
+            </HorizontalStackLayout>
+            <VerticalStackLayout Spacing="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="Name"/>
+                    <Label Grid.Column="1" Text="Price"/>
+                    <Label Grid.Column="2" Text="Country"/>
+                    <Label Grid.Column="3" Text="Date"/>
+                    <Label Grid.Column="4" Text="Description"/>
+                </Grid>
+                <CollectionView x:Name="CollectionView"
+                                SelectionMode="Single">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="{Binding Name}" />
+                                <Label Grid.Column="1" Text="{Binding Price}" />
+                                <Label Grid.Column="2" Text="{Binding Country}" />
+                                <Label Grid.Column="3" Text="{Binding Date}" />
+                                <Label Grid.Column="4" Text="{Binding Description}" FontSize="12" VerticalOptions="Center" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

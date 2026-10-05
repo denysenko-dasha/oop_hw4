@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="GeographicApp/GeographicApp.csproj" />
+  <Project Path="GeographicInterface/GeographicInterface.csproj" />
+</Solution>
