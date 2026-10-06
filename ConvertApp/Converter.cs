@@ -12,7 +12,7 @@ public class Converter
 
     public decimal ConvertUahToUsd(decimal uahMoney)
     {
-        if (DollarRate <= 0)
+        if (uahMoney <= 0)
         {
             return 0;
         }
@@ -22,7 +22,7 @@ public class Converter
 
     public decimal ConvertUahToEuro(decimal uahMoney)
     {
-        if (EuroRate <= 0)
+        if (uahMoney <= 0)
         {
             return 0;
         }
